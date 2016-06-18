@@ -5,3 +5,7 @@ var characters = {
   "Thor" = "10079",
   "Doctor Strange" = 12436
 }
+
+var base_url = "http://marvel.wikia.com/api/v1/Articles/Details/?ids="
+
+# Wikia API doc
