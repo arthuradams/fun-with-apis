@@ -28,7 +28,7 @@ $(document).ready(function(){ // Once the document is ready
       var id = "select" + selectorNumber
       var sel = $('<select>').appendTo('#myselectors')
       $(sel).attr('id', id)
-      $(sel).change( function() { $.getJSON(url + getQueryString(), displayResult) })
+      $(sel).change( function() { $.getJSON(url + getQueryString(nextNewSelector), displayResult) })
 
       for (var j = 0; j < options.length; j++) {
         $('#' + id).append($('<option>', { value: j, text : options[j]}))
@@ -47,7 +47,7 @@ $(document).ready(function(){ // Once the document is ready
   searchTerm = "adjective+noun+adverb+verb+adjective+noun+adverb+verb+location"
   $.getJSON(url + searchTerm, displayResult);
 
-  $( "[id*='select']" ).change( function() { $.getJSON(url + getQueryString(nextNewSelector), displayResult) })
+//  $( "[id*='select']" ).change( function() { $.getJSON(url + getQueryString(nextNewSelector), displayResult) })
 
   function displayResult(response) {
     $("#team").text(response.english)
